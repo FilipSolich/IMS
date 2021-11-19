@@ -5,11 +5,12 @@
 TARGET = ims
 DOC    = zprava.pdf
 
-ZIP_FILE = 11_xsolic00_xsechr00.zip
+PACK       = 11_xsolic00_xsechr00.zip
+PACK_FILES = $(DOC) Makefile *.cc
 
 CXX      = g++
 CXXFLAGS = -std=c++11 -O2
-LIBS     = -lm #-lsimlib
+LIBS     = -lm -lsimlib
 
 # DEBUG
 CXXFLAGS += -D DEBUG -Wall -Wextra -g
@@ -25,7 +26,7 @@ $(TARGET): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LIBS)
 
 clean:
-	$(RM) $(TARGET) $(ZIP_FILE) *.o
+	$(RM) $(TARGET) $(PACK) *.o
 
 pack:
-	zip $(ZIP_FILE) $(DOC) Makefile *.cc
+	zip $(PACK) $(PACK_FILES)
