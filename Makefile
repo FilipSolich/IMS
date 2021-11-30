@@ -18,12 +18,15 @@ CXXFLAGS += -D DEBUG -Wall -Wextra -g
 OBJS = ims.o
 
 
-.PHONY: all clean pack
+.PHONY: all run clean pack
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LIBS)
+
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
 	$(RM) $(TARGET) $(PACK) *.o
