@@ -5,20 +5,19 @@
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
-
-#include <iostream>
-
-#include <stdlib.h>
-
 #include <simlib.h>
+
 #include "order_generators.h"
 
-const double T0 = 0.0;
-const double T1 = 100.0; // TODO: change
 
-int main() {
-	Init(T0, T1);
-	Run();
+Generators::Generators(int time, Facility *F):
+    time(time), Fac(F)
+{};
 
-	return EXIT_SUCCESS;
-}
+void Generators::Behavior(){
+
+    //Store++;
+    Seize(*Fac);
+    Activate(Time + Exponential(time));
+    Release(*Fac);
+};

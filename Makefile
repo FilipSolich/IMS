@@ -15,7 +15,7 @@ LIBS     = -lm -lsimlib
 # DEBUG
 CXXFLAGS += -D DEBUG -Wall -Wextra -g
 
-OBJS = ims.o
+OBJS = ims.o order_generators.o
 
 
 .PHONY: all run clean pack
