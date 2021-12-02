@@ -12,7 +12,7 @@
 #include <simlib.h>
 
 
-class CarGoBack : Process {
+class CarGoBack : public Process {
 	Store *cars;
 
 public:

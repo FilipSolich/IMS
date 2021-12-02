@@ -12,8 +12,7 @@
 #include <simlib.h>
 
 
-class Order : public Process
-{
+class Order : public Process {
 	Facility *Fac;
 	Store *cars;
 

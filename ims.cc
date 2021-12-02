@@ -12,6 +12,7 @@
 #include "order_generators.hh"
 #include "shift.hh"
 
+#include "car_go_back.hh"
 
 const double T0 = 0.0;
 const double T1 = 100.0; // TODO: change
@@ -37,6 +38,7 @@ int main() {
 
 	(new Generators(SLOW_SHIFT_GENERATE, &slow_facility, &cars))->Activate();
 	(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
+	(new CarGoBack(&cars))->Activate();
 
 
 	Run();

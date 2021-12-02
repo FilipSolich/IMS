@@ -9,14 +9,15 @@
 #include <simlib.h>
 
 #include "order.hh"
+#include "car_go_back.hh"
 
 
 Order::Order(Facility *Fac, Store *cars):
-	Fac(Fac),cars(cars)
+	Fac(Fac), cars(cars)
 {};
 
-void Order::Behavior(){
-	
+void Order::Behavior()
+{
 	Enter(*cars); //input one of car
 	chyba:
 	Wait(Exponential(20)); //20min
@@ -24,7 +25,5 @@ void Order::Behavior(){
 		goto chyba;
 	
 	Wait(Exponential(1)); // taking order by customer
-	//order ended
-	CarGo;
-	(CarGo())->Activate();
+	(new CarGoBack(cars))->Activate();
 }

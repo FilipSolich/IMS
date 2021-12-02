@@ -25,4 +25,4 @@ public:
 	void Behavior();
 };
 
-#endif // SHIFT_H
+#endif // SHIFT_HH
