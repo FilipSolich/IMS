@@ -17,6 +17,8 @@
 double t_delivery;
 double t_wait;
 
+Stat time_delivery("Doba doruceni objednavky");
+
 Order::Order(Facility *Fac, Store *cars):
 	Fac(Fac), cars(cars)
 {};
@@ -40,5 +42,7 @@ void Order::Behavior()
 
 	t_delivery += t_wait;
 
+	time_delivery(t_delivery);
+	time_delivery.Output();
 	(new CarGoBack(cars))->Activate();
 }

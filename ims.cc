@@ -31,7 +31,7 @@ int main() {
 
 	
 	Run();
-	//time_delivery.Output();
+
 	// Generate stats
 	doba.Output();
 	SIMLIB_statistics.Output();
