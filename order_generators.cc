@@ -8,8 +8,9 @@
 
 #include <simlib.h>
 
-#include "order_generators.hh"
 #include "order.hh"
+#include "order_generators.hh"
+
 
 Generators::Generators(int time, Facility *F):
 	time(time), Fac(F)
@@ -17,7 +18,7 @@ Generators::Generators(int time, Facility *F):
 
 void Generators::Behavior()
 {
-	//(new Order(Fac))->Activate();
+	(new Order(Fac))->Activate();
 
 	Seize(*Fac);
 	Activate(Time + Exponential(time));
