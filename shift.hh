@@ -13,9 +13,8 @@
 
 
 class Shift : public Process {
-	bool state = 0;
-	Facility *slow_fac = nullptr;
-	Facility *fast_fac = nullptr;
+	Facility *slow_fac;
+	Facility *fast_fac;
 
 public:
 	Shift(Facility *slow_fac, Facility *fast_fac);

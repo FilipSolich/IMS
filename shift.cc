@@ -14,12 +14,12 @@
 
 Shift::Shift(Facility *slow_fac, Facility *fast_fac) :
 	slow_fac(slow_fac), fast_fac(fast_fac)
-{
-	Seize(*fast_fac);
-}
+{}
 
 void Shift::Behavior()
 {
+	Seize(*fast_fac);
+
 	while (true) {
 		Wait(SLOW_SHIFT_DURATION);
 		Seize(*slow_fac);
