@@ -11,21 +11,26 @@
 
 #include <simlib.h>
 
-class Generators : public Event
+class Generators : public Process
 {
 private:
     Facility *Fac;
     int time;
+    Store *Stor;
 
 public:
-    Generators(int time,Facility *F);
+    Generators(int time,Facility *F, Store *Stor);
     void Behavior();
-
-
-
 };
 
-
-
+class Create_Ord : public Process
+{
+private:
+    Facility *Fac;
+    Store *Stor; //Todo
+public:
+    Create_Ord(Facility *Fac, Store *Stor);
+    void Behavior();
+};
 
 #endif
