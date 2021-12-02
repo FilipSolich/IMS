@@ -18,7 +18,7 @@ Shift::Shift(Facility *slow_fac, Facility *fast_fac) :
 
 void Shift::Behavior()
 {
-	Seize(*fast_fac);
+	/*Seize(*fast_fac);
 
 	while (true) {
 		Wait(SLOW_SHIFT_DURATION);
@@ -27,5 +27,5 @@ void Shift::Behavior()
 		Wait(FAST_SHIFT_DURATION);
 		Seize(*fast_fac);
 		Release(*slow_fac);
-	}
+	}*/
 }

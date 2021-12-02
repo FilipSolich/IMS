@@ -14,7 +14,7 @@
 const int HOUR = 60; // 60m
 
 const double T0 = 0.0;   // Simulation start
-const double T1 = 100.0; // Simulation end
+const double T1 = 480; // Simulation end
 
 const int SLOW_SHIFT_DURATION = 3 * HOUR; // Slow shift length (default 3h)
 const int FAST_SHIFT_DURATION = 4 * HOUR; // Fast shift length (default 4h)
@@ -30,5 +30,6 @@ const int CAR_RETURN_DURATION = 15; // How long it takes to car return for next 
 const int CARS = 5; // Number of cars (default 5)
 
 const double DELIVERY_FAILED = 0.01; // Delivery failed chance (default 1%)
+
 
 #endif // CONFIG_HH

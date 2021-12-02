@@ -7,7 +7,7 @@
  */
 
 #include <simlib.h>
-
+#include <iostream>
 #include "order.hh"
 #include "order_generators.hh"
 
@@ -19,7 +19,6 @@ Generators::Generators(int time, Facility *fac, Store *cars):
 void Generators::Behavior()
 {
 	(new Order(fac, cars))->Activate();
-
 	Seize(*fac);
 	Activate(Time + Exponential(time));
 	Release(*fac);

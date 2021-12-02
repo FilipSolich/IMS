@@ -12,6 +12,9 @@
 #include "config.hh"
 #include "order.hh"
 
+Stat time_delivery("Doba doruceni objednavky");
+double t_delivery;
+double t_wait;
 
 Order::Order(Facility *Fac, Store *cars):
 	Fac(Fac), cars(cars)
@@ -19,12 +22,22 @@ Order::Order(Facility *Fac, Store *cars):
 
 void Order::Behavior()
 {
+	t_delivery = 0;
+	t_wait = 0;
+
 	Enter(*cars); //input one of car
 	chyba:
-	Wait(Exponential(ORDER_DELIVERY_TIME));
+	t_delivery = Exponential(ORDER_DELIVERY_TIME);
+	Wait(t_delivery);
 	if(Random() <= DELIVERY_FAILED)
 		goto chyba;
 	
-	Wait(Exponential(CUSTOMER_TAKE_ORDER)); // taking order by customer
+	t_wait = Exponential(CUSTOMER_TAKE_ORDER);
+	Wait(t_wait); // taking order by customer
+
+	t_delivery += t_wait;
+	time_delivery(t_delivery);
+	time_delivery.Output();
+
 	(new CarGoBack(cars))->Activate();
 }
