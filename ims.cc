@@ -12,7 +12,6 @@
 #include "order_generators.hh"
 #include "shift.hh"
 
-
 int main() {
 	RandomSeed(time(NULL));
 
@@ -30,8 +29,8 @@ int main() {
 
 	
 	Run();
-	//time_delivery.Output();
+
 	// Generate stats
-	 SIMLIB_statistics.Output();
+	SIMLIB_statistics.Output();
 	return EXIT_SUCCESS;
 }
