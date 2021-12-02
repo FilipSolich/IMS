@@ -8,8 +8,9 @@
 
 #include <simlib.h>
 
-#include "order_generators.hh"
 #include "order.hh"
+#include "order_generators.hh"
+
 
 Generators::Generators(int time, Facility *F):
 	time(time), Fac(F)
