@@ -11,10 +11,20 @@
 #include "order.hh"
 
 
-Order::Order(Facility *Fac):
-	Fac(Fac)
+Order::Order(Facility *Fac, Store *cars):
+	Fac(Fac),cars(cars)
 {};
 
 void Order::Behavior(){
-
+	
+	Enter(*cars); //input one of car
+	chyba:
+	Wait(Exponential(20)); //20min
+	if( Random() <= 0.01 )	//1%
+		goto chyba;
+	
+	Wait(Exponential(1)); // taking order by customer
+	//order ended
+	CarGo;
+	(CarGo())->Activate();
 }

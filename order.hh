@@ -15,9 +15,10 @@
 class Order : public Process
 {
 	Facility *Fac;
+	Store *cars;
 
 public:
-	Order(Facility *Fac);
+	Order(Facility *Fac, Store *cars);
 
 	void Behavior();
 };
