@@ -15,9 +15,9 @@
 class Generators : public Process {
 	int time;
 	Facility *Fac;
-
+	Store *cars;
 public:
-	Generators(int time, Facility *F);
+	Generators(int time, Facility *F, Store *cars);
 	void Behavior();
 };
 

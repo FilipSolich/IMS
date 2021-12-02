@@ -35,8 +35,8 @@ int main() {
 
 	(new Shift(SLOW_SHIFT_TIME, FAST_SHIFT_TIME, &slow_facility, &fast_facility))->Activate();
 
-	(new Generators(SLOW_SHIFT_GENERATE, &slow_facility))->Activate();
-	(new Generators(FAST_SHIFT_GENERATE, &fast_facility))->Activate();
+	(new Generators(SLOW_SHIFT_GENERATE, &slow_facility, &cars))->Activate();
+	(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
 
 
 	Run();
