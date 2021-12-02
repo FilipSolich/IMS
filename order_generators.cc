@@ -6,25 +6,20 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#include "order_generators.h"
 #include <simlib.h>
 
-Generators::Generators(int time, Facility *F, Store *Stor): //Todo Store
-    time(time), Fac(F), Stor(Stor){};
+#include "order_generators.hh"
+#include "order.hh"
 
-void Generators::Behavior(){
+Generators::Generators(int time, Facility *F):
+	time(time), Fac(F)
+{};
 
-    //Store++;
-    (new Create_Ord(Fac,Stor))->Activate();
+void Generators::Behavior()
+{
+	//(new Order(Fac))->Activate();
 
-    Seize(*Fac);   
-    Activate(Time + Exponential(time));
-    Release(*Fac);
-
+	Seize(*Fac);
+	Activate(Time + Exponential(time));
+	Release(*Fac);
 };
-Create_Ord::Create_Ord(Facility *Fac, Store *Stor):
-    Fac(Fac), Stor(Stor){};
-
-void Create_Ord::Behavior(){
-    ; //kill process   
-}

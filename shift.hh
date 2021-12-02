@@ -1,3 +1,11 @@
+/*
+ * IMS
+ *
+ * Date:    30. 11. 2021
+ * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
+ *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
+ */
+
 #ifndef SHIFT_H
 #define SHIFT_H
 
@@ -5,7 +13,6 @@
 
 
 class Shift : public Process {
-
 	bool state = 0;
 	int slow_shift = 5; // TODO change
 	int fast_shift = 3; // TODO change
