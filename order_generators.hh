@@ -14,11 +14,11 @@
 
 class Generators : public Process {
 	int time;
-	Facility *Fac;
+	Facility *fac;
 	Store *cars;
 
 public:
-	Generators(int time, Facility *F, Store *cars);
+	Generators(int time, Facility *fac, Store *cars);
 
 	void Behavior();
 };

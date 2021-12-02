@@ -9,6 +9,7 @@
 #include <simlib.h>
 
 #include "car_go_back.hh"
+#include "config.hh"
 
 
 CarGoBack::CarGoBack(Store *cars):
@@ -17,6 +18,6 @@ CarGoBack::CarGoBack(Store *cars):
 
 void CarGoBack::Behavior()
 {
-	Wait(5);
+	Wait(CAR_RETURN_DURATION);
 	Leave(*cars, 1);
 }

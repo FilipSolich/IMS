@@ -8,8 +8,9 @@
 
 #include <simlib.h>
 
-#include "order.hh"
 #include "car_go_back.hh"
+#include "config.hh"
+#include "order.hh"
 
 
 Order::Order(Facility *Fac, Store *cars):
@@ -20,10 +21,10 @@ void Order::Behavior()
 {
 	Enter(*cars); //input one of car
 	chyba:
-	Wait(Exponential(20)); //20min
-	if( Random() <= 0.01 )	//1%
+	Wait(Exponential(ORDER_DELIVERY_TIME));
+	if(Random() <= DELIVERY_FAILED)
 		goto chyba;
 	
-	Wait(Exponential(1)); // taking order by customer
+	Wait(Exponential(CUSTOMER_TAKE_ORDER)); // taking order by customer
 	(new CarGoBack(cars))->Activate();
 }

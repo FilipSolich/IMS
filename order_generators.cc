@@ -12,15 +12,15 @@
 #include "order_generators.hh"
 
 
-Generators::Generators(int time, Facility *F, Store *cars):
-	time(time), Fac(F), cars(cars)
+Generators::Generators(int time, Facility *fac, Store *cars):
+	time(time), fac(fac), cars(cars)
 {};
 
 void Generators::Behavior()
 {
-	(new Order(Fac,cars))->Activate();
+	(new Order(fac, cars))->Activate();
 
-	Seize(*Fac);
+	Seize(*fac);
 	Activate(Time + Exponential(time));
-	Release(*Fac);
+	Release(*fac);
 };

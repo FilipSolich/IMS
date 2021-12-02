@@ -8,11 +8,12 @@
 
 #include <simlib.h>
 
+#include "config.hh"
 #include "shift.hh"
 
 
-Shift::Shift(int slow_shift, int fast_shift, Facility *slow_fac, Facility *fast_fac) :
-	slow_shift(slow_shift), fast_shift(fast_shift), slow_fac(slow_fac), fast_fac(fast_fac)
+Shift::Shift(Facility *slow_fac, Facility *fast_fac) :
+	slow_fac(slow_fac), fast_fac(fast_fac)
 {
 	Seize(*fast_fac);
 }
@@ -20,10 +21,10 @@ Shift::Shift(int slow_shift, int fast_shift, Facility *slow_fac, Facility *fast_
 void Shift::Behavior()
 {
 	while (true) {
-		Wait(slow_shift);
+		Wait(SLOW_SHIFT_DURATION);
 		Seize(*slow_fac);
 		Release(*fast_fac);
-		Wait(fast_shift);
+		Wait(FAST_SHIFT_DURATION);
 		Seize(*fast_fac);
 		Release(*slow_fac);
 	}
