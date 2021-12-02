@@ -17,7 +17,7 @@ Generators::Generators(int time, Facility *F):
 
 void Generators::Behavior()
 {
-	//(new Order(Fac))->Activate();
+	(new Order(Fac))->Activate();
 
 	Seize(*Fac);
 	Activate(Time + Exponential(time));
