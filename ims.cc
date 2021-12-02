@@ -6,7 +6,6 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#include <iostream>
 #include <stdlib.h>
 
 #include "config.hh"
@@ -15,6 +14,10 @@
 
 
 int main() {
+	Stat doba("doba");
+
+	RandomSeed(time(NULL));
+
 	Init(T0, T1);
 
 	Store cars("Cars", CARS);
@@ -25,10 +28,11 @@ int main() {
 	(new Shift(&slow_facility, &fast_facility))->Activate();
 
 	(new Generators(SLOW_SHIFT_GENERATE, &slow_facility, &cars))->Activate();
-	(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
+	//(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
 
 	Run();
 
+	doba.Output();
 	// Generate stats
 
 	return EXIT_SUCCESS;

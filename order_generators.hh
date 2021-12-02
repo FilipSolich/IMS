@@ -12,7 +12,7 @@
 #include <simlib.h>
 
 
-class Generators : public Process {
+class Generators : public Event {
 	int time;
 	Facility *fac;
 	Store *cars;

@@ -5,6 +5,7 @@
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
+#include <iostream>
 
 #include <simlib.h>
 
@@ -20,7 +21,7 @@ void Generators::Behavior()
 {
 	(new Order(fac, cars))->Activate();
 
-	Seize(*fac);
+	double t = Exponential(time);
+	std::cout << "time " << t << "Time " << Time << std::endl;
 	Activate(Time + Exponential(time));
-	Release(*fac);
 };

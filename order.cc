@@ -6,6 +6,8 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
+#include <iostream>
+
 #include <simlib.h>
 
 #include "car_go_back.hh"
@@ -19,6 +21,8 @@ Order::Order(Facility *Fac, Store *cars):
 
 void Order::Behavior()
 {
+	if (Fac->Busy()) return;
+
 	Enter(*cars); //input one of car
 	chyba:
 	Wait(Exponential(ORDER_DELIVERY_TIME));
