@@ -6,13 +6,14 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
+#include <iostream>
+
 #include <simlib.h>
 
 #include "car_go_back.hh"
 #include "config.hh"
 #include "order.hh"
 
-Stat time_delivery("Doba doruceni objednavky");
 double t_delivery;
 double t_wait;
 
@@ -24,6 +25,7 @@ void Order::Behavior()
 {
 	t_delivery = 0;
 	t_wait = 0;
+	if (Fac->Busy()) return;
 
 	Enter(*cars); //input one of car
 	chyba:
@@ -37,7 +39,6 @@ void Order::Behavior()
 
 	t_delivery += t_wait;
 	time_delivery(t_delivery);
-	time_delivery.Output();
 
 	(new CarGoBack(cars))->Activate();
 }

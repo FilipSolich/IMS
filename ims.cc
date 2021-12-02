@@ -6,7 +6,6 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#include <iostream>
 #include <stdlib.h>
 
 #include "config.hh"
@@ -27,11 +26,11 @@ int main() {
 	(new Shift(&slow_facility, &fast_facility))->Activate();
 
 	(new Generators(SLOW_SHIFT_GENERATE, &slow_facility, &cars))->Activate();
-	//(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
+	(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
 
 	
 	Run();
-	
+	//time_delivery.Output();
 	// Generate stats
 	 SIMLIB_statistics.Output();
 	return EXIT_SUCCESS;

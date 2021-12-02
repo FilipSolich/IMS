@@ -11,6 +11,8 @@
 #ifndef CONFIG_HH
 #define CONFIG_HH
 
+#include <simlib.h>
+
 const int HOUR = 60; // 60m
 
 const double T0 = 0.0;   // Simulation start
@@ -31,5 +33,7 @@ const int CARS = 5; // Number of cars (default 5)
 
 const double DELIVERY_FAILED = 0.01; // Delivery failed chance (default 1%)
 
+/*Stats stuff*/
+Stat time_delivery("Doba doruceni objednavky");
 
 #endif // CONFIG_HH
