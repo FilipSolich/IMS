@@ -6,8 +6,8 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#ifndef SHIFT_H
-#define SHIFT_H
+#ifndef SHIFT_HH
+#define SHIFT_HH
 
 #include <simlib.h>
 

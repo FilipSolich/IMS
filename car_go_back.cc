@@ -6,20 +6,17 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#ifndef ORDER_HH
-#define ORDER_HH
-
 #include <simlib.h>
 
+#include "car_go_back.hh"
 
-class Order : public Process
+
+CarGoBack::CarGoBack(Store *cars):
+	cars(cars)
+{};
+
+void CarGoBack::Behavior()
 {
-	Facility *Fac;
-
-public:
-	Order(Facility *Fac);
-
-	void Behavior();
-};
-
-#endif // ORDER_HH
+	Wait(5);
+	Leave(*cars, 1);
+}

@@ -6,19 +6,19 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#ifndef ORDER_GENERATORS_HH
-#define ORDER_GENERATORS_HH
+#ifndef CAR_GO_BACK_HH
+#define CAR_GO_BACK_HH
 
 #include <simlib.h>
 
 
-class Generators : public Process {
-	int time;
-	Facility *Fac;
+class CarGoBack : Process {
+	Store *cars;
 
 public:
-	Generators(int time, Facility *F);
+	CarGoBack(Store *cars);
+
 	void Behavior();
 };
 
-#endif // ORDER_GENERATORS_HH
+#endif // CAR_GO_BACK_HH
