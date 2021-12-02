@@ -19,15 +19,15 @@ double t_wait;
 
 Stat time_delivery("Doba doruceni objednavky");
 
-Order::Order(Facility *Fac, Store *cars):
-	Fac(Fac), cars(cars)
+Order::Order(Facility *fac, Store *cars):
+	fac(fac), cars(cars)
 {};
 
 void Order::Behavior()
 {
 	t_delivery = 0;
 	t_wait = 0;
-	if (Fac->Busy()) return;
+	if (fac->Busy()) return;
 
 	Enter(*cars); //input one of car
 	chyba:
