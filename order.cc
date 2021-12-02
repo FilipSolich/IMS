@@ -35,10 +35,10 @@ void Order::Behavior()
 		goto chyba;
 	
 	t_wait = Exponential(CUSTOMER_TAKE_ORDER);
+	doba(t_wait);
 	Wait(t_wait); // taking order by customer
 
 	t_delivery += t_wait;
-	time_delivery(t_delivery);
 
 	(new CarGoBack(cars))->Activate();
 }
