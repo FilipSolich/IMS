@@ -22,11 +22,9 @@ void Shift::Behavior()
 
 	while (true) {
 		Wait(SLOW_SHIFT_DURATION);
-		std::cout << "slow out	\n";
 		Seize(*slow_fac);
 		Release(*fast_fac);
 		Wait(FAST_SHIFT_DURATION);
-		std::cout << "fast out \n";
 		Seize(*fast_fac);
 		Release(*slow_fac);
 	}

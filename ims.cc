@@ -12,7 +12,7 @@
 #include "order_generators.hh"
 #include "shift.hh"
 
-Stat doba("doba");
+Stat doba("Doba doruceni objednavky");
 
 int main() {
 	RandomSeed(time(NULL));

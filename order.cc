@@ -14,10 +14,8 @@
 #include "config.hh"
 #include "order.hh"
 
-double t_delivery;
-double t_wait;
-
-Stat time_delivery("Doba doruceni objednavky");
+double t_before;
+double t_after;
 
 Order::Order(Facility *Fac, Store *cars):
 	Fac(Fac), cars(cars)
@@ -25,24 +23,22 @@ Order::Order(Facility *Fac, Store *cars):
 
 void Order::Behavior()
 {
-	t_delivery = 0;
-	t_wait = 0;
+	t_before = Time;
+
 	if (Fac->Busy()) return;
 
 	Enter(*cars); //input one of car
 	chyba:
-	t_delivery = Exponential(ORDER_DELIVERY_TIME);
-	Wait(t_delivery);
+	Wait(Exponential(ORDER_DELIVERY_TIME));
 	if(Random() <= DELIVERY_FAILED)
 		goto chyba;
 	
-	t_wait = Exponential(CUSTOMER_TAKE_ORDER);
-	doba(t_wait);
-	Wait(t_wait); // taking order by customer
+	Wait(Exponential(CUSTOMER_TAKE_ORDER)); // taking order by customer
 
-	t_delivery += t_wait;
+	
+	t_after = Time;
 
-	time_delivery(t_delivery);
-	time_delivery.Output();
+	doba(t_after - t_before);
+
 	(new CarGoBack(cars))->Activate();
 }
