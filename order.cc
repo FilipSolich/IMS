@@ -23,22 +23,25 @@ Order::Order(Facility *fac, Store *cars):
 
 void Order::Behavior()
 {
-	t_before = Time;
 
-	if (Fac->Busy()) return;
+	if (fac->Busy()) return;
+
+	int sum = 0;
 
 	Enter(*cars); //input one of car
 	chyba:
-	Wait(Exponential(ORDER_DELIVERY_TIME));
+	int x = Exponential(ORDER_DELIVERY_TIME);
+	sum += x;
+	
+	Wait(x);
 	if(Random() <= DELIVERY_FAILED)
 		goto chyba;
 	
-	Wait(Exponential(CUSTOMER_TAKE_ORDER)); // taking order by customer
+	int y = Exponential(CUSTOMER_TAKE_ORDER);
+	Wait(y); // taking order by customer
+	sum += y;
 
-	
-	t_after = Time;
-
-	doba(t_after - t_before);
+	doba(sum);
 
 	(new CarGoBack(cars))->Activate();
 }

@@ -26,7 +26,8 @@ const int FAST_SHIFT_DURATION = 4 * HOUR; // Fast shift length (default 4h)
 const int SLOW_SHIFT_GENERATE = 5; // Slow shift generation new order (default 5m)
 const int FAST_SHIFT_GENERATE = 3; // Fast shift generation new order (default 3m)
 
-const int ORDER_DELIVERY_TIME = 20; // How long it takes order to delicver (default 20m)
+const int ORDER_DELIVERY_TIME = 15; // How long it takes time delivery
+
 const int CUSTOMER_TAKE_ORDER = 1;  // How long it takes customer to take order (default 1m)
 
 const int CAR_RETURN_DURATION = 15; // How long it takes to car return for next order (default 15m)
