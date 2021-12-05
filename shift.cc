@@ -10,7 +10,7 @@
 
 #include "config.hh"
 #include "shift.hh"
-#include <iostream>
+
 
 Shift::Shift(Facility *slow_fac, Facility *fast_fac) :
 	slow_fac(slow_fac), fast_fac(fast_fac)

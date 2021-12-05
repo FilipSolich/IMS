@@ -11,10 +11,6 @@
 #ifndef CONFIG_HH
 #define CONFIG_HH
 
-#include <simlib.h>
-
-extern Stat doba;
-
 const int HOUR = 60; // 60m
 
 const int T0 = 0;   // Simulation start

@@ -6,16 +6,13 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#include <iostream>
-
 #include <simlib.h>
 
 #include "car_go_back.hh"
 #include "config.hh"
 #include "order.hh"
+#include "stats.hh"
 
-double t_before;
-double t_after;
 
 Order::Order(Facility *fac, Store *cars):
 	fac(fac), cars(cars)
@@ -23,9 +20,12 @@ Order::Order(Facility *fac, Store *cars):
 
 void Order::Behavior()
 {
+	double t_before;
+	double t_after;
+
 	t_before = Time;
 
-	if (Fac->Busy()) return;
+	if (fac->Busy()) return;
 
 	Enter(*cars); //input one of car
 	chyba:
@@ -34,7 +34,6 @@ void Order::Behavior()
 		goto chyba;
 	
 	Wait(Exponential(CUSTOMER_TAKE_ORDER)); // taking order by customer
-
 	
 	t_after = Time;
 

@@ -12,6 +12,7 @@
 #include "order_generators.hh"
 #include "shift.hh"
 
+
 Stat doba("Doba doruceni objednavky");
 
 int main() {
@@ -29,10 +30,8 @@ int main() {
 	(new Generators(SLOW_SHIFT_GENERATE, &slow_facility, &cars))->Activate();
 	(new Generators(FAST_SHIFT_GENERATE, &fast_facility, &cars))->Activate();
 
-	
 	Run();
 
-	// Generate stats
 	doba.Output();
 	SIMLIB_statistics.Output();
 	return EXIT_SUCCESS;
