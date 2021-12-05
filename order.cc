@@ -6,16 +6,13 @@
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#include <iostream>
-
 #include <simlib.h>
 
 #include "car_go_back.hh"
 #include "config.hh"
 #include "order.hh"
+#include "stats.hh"
 
-double t_before;
-double t_after;
 
 Order::Order(Facility *fac, Store *cars):
 	fac(fac), cars(cars)

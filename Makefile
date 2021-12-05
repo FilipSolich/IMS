@@ -29,7 +29,7 @@ run: $(TARGET)
 	./$(TARGET)
 
 clean:
-	$(RM) $(TARGET) $(PACK) *.o
+	rm -rf $(TARGET) $(PACK) *.o
 
 pack:
 	zip $(PACK) $(PACK_FILES)
