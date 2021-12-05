@@ -13,11 +13,11 @@
 
 
 class Order : public Process {
-	Facility *Fac;
+	Facility *fac;
 	Store *cars;
 
 public:
-	Order(Facility *Fac, Store *cars);
+	Order(Facility *fac, Store *cars);
 
 	void Behavior();
 };

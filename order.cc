@@ -17,8 +17,8 @@
 double t_before;
 double t_after;
 
-Order::Order(Facility *Fac, Store *cars):
-	Fac(Fac), cars(cars)
+Order::Order(Facility *fac, Store *cars):
+	fac(fac), cars(cars)
 {};
 
 void Order::Behavior()
