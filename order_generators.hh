@@ -12,13 +12,13 @@
 #include <simlib.h>
 
 
-class Generators : public Event {
+class Generator : public Event {
 	int time;
 	Facility *fac;
 	Store *cars;
 
 public:
-	Generators(int time, Facility *fac, Store *cars);
+	Generator(int time, Facility *fac, Store *cars);
 
 	void Behavior();
 };

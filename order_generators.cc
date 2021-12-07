@@ -14,11 +14,11 @@
 #include "order_generators.hh"
 
 
-Generators::Generators(int time, Facility *fac, Store *cars):
+Generator::Generator(int time, Facility *fac, Store *cars):
 	time(time), fac(fac), cars(cars)
 {};
 
-void Generators::Behavior()
+void Generator::Behavior()
 {
 	(new Order(fac, cars))->Activate();
 	Activate(Time + Exponential(time));
