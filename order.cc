@@ -24,6 +24,7 @@ void Order::Behavior()
 
 	int sum = 0;
 
+
 	double wait_time = Time;
 	Enter(*cars); //input one of car
 	wait_time = Time - wait_time;
@@ -40,7 +41,7 @@ void Order::Behavior()
 	Wait(y); // taking order by customer
 	sum += y;
 
-	doba(sum);
+	delivery_time(sum);
 	wait_for_car(wait_time);
 
 	(new CarGoBack(cars))->Activate();

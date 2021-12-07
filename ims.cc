@@ -13,7 +13,7 @@
 #include "shift.hh"
 
 
-Stat doba("Doba doruceni objednavky");
+Stat delivery_time("Doba dorucení objednávky");
 Stat wait_for_car("Doba čekání na auto");
 
 int main() {
@@ -33,9 +33,9 @@ int main() {
 
 	Run();
 
-	doba.Output();
-	SIMLIB_statistics.Output();
+	delivery_time.Output();
 	wait_for_car.Output();
+	SIMLIB_statistics.Output();
 
 	return EXIT_SUCCESS;
 }

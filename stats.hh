@@ -12,7 +12,7 @@
 #include <simlib.h>
 
 
-extern Stat doba;
+extern Stat delivery_time;
 extern Stat wait_for_car;
 
 #endif // STATS_HH
