@@ -1,5 +1,5 @@
 /*
- * IMS
+ * car_returns.hh
  *
  * Date:    30. 11. 2021
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>

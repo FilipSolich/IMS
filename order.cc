@@ -1,5 +1,5 @@
 /*
- * IMS
+ * order.cc
  *
  * Date:    30. 11. 2021
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
@@ -24,17 +24,19 @@ void Order::Behavior()
 
 	int sum = 0;
 
+	if (cars->Full()) wait_for_car_count++;
+
 	double wait_time = Time;
 	Enter(*cars); //input one of car
 	wait_time = Time - wait_time;
 
-	chyba:
+	error:
 	int x = Exponential(ORDER_DELIVERY_TIME);
 	sum += x;
 	Wait(x);
 
 	if(Random() <= DELIVERY_FAILED)
-		goto chyba;
+		goto error;
 
 	int y = Exponential(CUSTOMER_TAKE_ORDER);
 	Wait(y); // taking order by customer

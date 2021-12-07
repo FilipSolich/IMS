@@ -1,5 +1,5 @@
 /*
- * IMS
+ * config.hh
  *
  * Date:    30. 11. 2021
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
@@ -19,10 +19,10 @@ const double T1 = 14 * HOUR; // Simulation end (default 14h)
 const int SLOW_SHIFT_DURATION = 3 * HOUR; // Slow shift length (default 3h)
 const int FAST_SHIFT_DURATION = 4 * HOUR; // Fast shift length (default 4h)
 
-const int SLOW_SHIFT_GENERATE = 5; // Slow shift generation new order (default 5m)
-const int FAST_SHIFT_GENERATE = 3; // Fast shift generation new order (default 3m)
+const int SLOW_SHIFT_GENERATE = 10; // Slow shift generation new order (default 5m)
+const int FAST_SHIFT_GENERATE = 5; // Fast shift generation new order (default 3m)
 
-const int ORDER_DELIVERY_TIME = 10; // How long it takes time delivery
+const int ORDER_DELIVERY_TIME = 10; // How long it takes time delivery (default 10m)
 
 const int CUSTOMER_TAKE_ORDER = 1;  // How long it takes customer to take order (default 1m)
 

@@ -1,20 +1,24 @@
 /*
- * IMS
+ * ims.cc
  *
  * Date:    30. 11. 2021
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
+#include <iostream>
+
 #include <stdlib.h>
 
 #include "config.hh"
-#include "order_generators.hh"
+#include "order_generator.hh"
 #include "shift.hh"
 
 
 Stat delivery_time("Doba doručení objednávky");
 Stat wait_for_car("Doba čekání na auto");
+
+int wait_for_car_count = 0;
 
 int main() {
 	RandomSeed(time(NULL));
@@ -35,6 +39,9 @@ int main() {
 
 	delivery_time.Output();
 	wait_for_car.Output();
+
+	std::cout << wait_for_car_count << " objednávek čekalo na auto." << std::endl;
+
 	SIMLIB_statistics.Output();
 
 	return EXIT_SUCCESS;

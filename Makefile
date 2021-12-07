@@ -15,7 +15,7 @@ LIBS     = -lm -lsimlib
 # DEBUG
 CXXFLAGS += -Wall -Wextra -g
 
-OBJS = ims.o shift.o order_generators.o order.o car_returns.o
+OBJS = ims.o shift.o order_generator.o order.o car_returns.o
 
 
 .PHONY: all run clean pack

@@ -1,13 +1,13 @@
 /*
- * IMS
+ * order_generator.hh
  *
  * Date:    30. 11. 2021
  * Authors: Filip Solich <xsolic00@stud.fit.vutbr.cz>
  *          Marek Sechra <xsechr00@stud.fit.vutbr.cz>
  */
 
-#ifndef ORDER_GENERATORS_HH
-#define ORDER_GENERATORS_HH
+#ifndef ORDER_GENERATOR_HH
+#define ORDER_GENERATOR_HH
 
 #include <simlib.h>
 
@@ -23,4 +23,4 @@ public:
 	void Behavior();
 };
 
-#endif // ORDER_GENERATORS_HH
+#endif // ORDER_GENERATOR_HH
