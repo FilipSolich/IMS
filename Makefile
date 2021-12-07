@@ -13,7 +13,7 @@ CXXFLAGS = -std=c++11 -O2
 LIBS     = -lm -lsimlib
 
 # DEBUG
-CXXFLAGS += -D DEBUG -Wall -Wextra -g
+CXXFLAGS += -Wall -Wextra -g
 
 OBJS = ims.o shift.o order_generators.o order.o car_returns.o
 
