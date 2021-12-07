@@ -13,7 +13,7 @@
 #include "shift.hh"
 
 
-Stat delivery_time("Doba dorucení objednávky");
+Stat delivery_time("Doba doručení objednávky");
 Stat wait_for_car("Doba čekání na auto");
 
 int main() {
