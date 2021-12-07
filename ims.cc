@@ -14,6 +14,7 @@
 
 
 Stat doba("Doba doruceni objednavky");
+Stat wait_for_car("Doba čekání na auto");
 
 int main() {
 	RandomSeed(time(NULL));
@@ -34,5 +35,7 @@ int main() {
 
 	doba.Output();
 	SIMLIB_statistics.Output();
+	wait_for_car.Output();
+
 	return EXIT_SUCCESS;
 }

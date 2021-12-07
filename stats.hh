@@ -13,5 +13,6 @@
 
 
 extern Stat doba;
+extern Stat wait_for_car;
 
 #endif // STATS_HH

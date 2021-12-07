@@ -13,8 +13,8 @@
 
 const int HOUR = 60; // 60m
 
-const int T0 = 0;   // Simulation start
-const int T1 = 480; // Simulation end
+const int T0 = 0;         // Simulation start
+const int T1 = 14 * HOUR; // Simulation end (default 14h)
 
 const int SLOW_SHIFT_DURATION = 3 * HOUR; // Slow shift length (default 3h)
 const int FAST_SHIFT_DURATION = 4 * HOUR; // Fast shift length (default 4h)
