@@ -18,6 +18,8 @@
 Stat delivery_time("Doba doručení objednávky");
 Stat wait_for_car("Doba čekání na auto");
 
+Histogram waiting_car("Histogram doby čekání na auto",0,1,10);
+
 int wait_for_car_count = 0;
 
 int main() {
@@ -41,6 +43,8 @@ int main() {
 	wait_for_car.Output();
 
 	std::cout << wait_for_car_count << " objednávek čekalo na auto." << std::endl;
+
+	waiting_car.Output();
 
 	SIMLIB_statistics.Output();
 

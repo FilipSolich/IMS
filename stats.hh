@@ -14,7 +14,7 @@
 
 extern Stat delivery_time;
 extern Stat wait_for_car;
-
+extern Histogram waiting_car;
 extern int wait_for_car_count;
 
 #endif // STATS_HH
