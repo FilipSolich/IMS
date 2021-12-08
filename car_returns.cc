@@ -18,6 +18,7 @@ CarReturns::CarReturns(Store *cars):
 
 void CarReturns::Behavior()
 {
+	// Car on his way back to store.
 	Wait(CAR_RETURN_DURATION);
 	Leave(*cars, 1);
 }
