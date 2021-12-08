@@ -1,9 +1,0 @@
-Přepínání rychlosti generování objednávek: PSEUDOCODE
-
-while(směna začala and směna neskončila) do 
-    
-    Nastavení pomalého generování objednávek
-    wait_until(doba generování pomalých objednávek)
-    Nastavení rychlých objednávek
-    
-end 
