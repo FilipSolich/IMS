@@ -6,7 +6,7 @@ TARGET = ims
 DOC    = zprava.pdf
 
 PACK       = 11_xsolic00_xsechr00.zip
-PACK_FILES = $(DOC) Makefile *.cc
+PACK_FILES = $(DOC) Makefile *.cc *.hh
 
 CXX      = g++
 CXXFLAGS = -std=c++11 -O2
