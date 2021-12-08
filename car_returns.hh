@@ -12,11 +12,11 @@
 #include <simlib.h>
 
 
-class CarGoBack : public Process {
+class CarReturns : public Process {
 	Store *cars;
 
 public:
-	CarGoBack(Store *cars);
+	CarReturns(Store *cars);
 
 	void Behavior();
 };

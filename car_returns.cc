@@ -12,11 +12,11 @@
 #include "config.hh"
 
 
-CarGoBack::CarGoBack(Store *cars):
+CarReturns::CarReturns(Store *cars):
 	cars(cars)
 {};
 
-void CarGoBack::Behavior()
+void CarReturns::Behavior()
 {
 	Wait(CAR_RETURN_DURATION);
 	Leave(*cars, 1);

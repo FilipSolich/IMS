@@ -45,5 +45,5 @@ void Order::Behavior()
 	delivery_time(sum);
 	wait_for_car(wait_time);
 
-	(new CarGoBack(cars))->Activate();
+	(new CarReturns(cars))->Activate();
 }
