@@ -29,7 +29,7 @@ void Order::Behavior()
 	double wait_time = Time;
 	Enter(*cars); //input one of car
 	wait_time = Time - wait_time;
-
+	waiting_car(wait_time);
 	error:
 	int x = Exponential(ORDER_DELIVERY_TIME);
 	sum += x;
@@ -44,6 +44,6 @@ void Order::Behavior()
 
 	delivery_time(sum);
 	wait_for_car(wait_time);
-
+	
 	(new CarGoBack(cars))->Activate();
 }
